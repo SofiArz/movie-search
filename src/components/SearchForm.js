@@ -31,13 +31,13 @@ export function SearchForm({ onResult, onDeleteSearch }) {
             <div className="field has-addons">
                 <div className="control">
                     <input
-                        className="input"
+                        class="input is-primary"
                         onChange={handleChange}
                         type="text"
                         placeholder="Movie to search" />
                 </div>
                 <div className="control">
-                    <button className="button is-info">
+                    <button className="button is-primary">
                         Search
                     </button>
                 </div>
