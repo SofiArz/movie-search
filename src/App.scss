@@ -9,6 +9,7 @@ $purple: #4a437f79;
 .SearchForm-wrapper {
   display: flex;
   justify-content: right;
+  .control{font-size: medium;}
   @include mixins.mobile {
     form{
       width: 100%;
@@ -59,6 +60,14 @@ $purple: #4a437f79;
   margin-bottom: 24px;
 }
 
+.streaming-logo-orbit {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover; 
+}
+
 /* ---------- Container for the orbiting circles animation ---------- */
 #circle-orbit-container {
   position: relative;
@@ -79,18 +88,8 @@ $purple: #4a437f79;
   height: 643px;
   border: 1px $purple solid;
   border-radius: 100%;
-  -webkit-animation: spin-right 10s linear infinite;
-  animation: spin-right 10s linear infinite;
-}
-
-/* ---------- Repeating styles for the inner orbiting circles ---------- */
-.inner-orbit-circles {
-  position: absolute;
-  top: 194px;
-  height: 10px;
-  width: 10px;
-  border-radius: 100%;
-  background-color: #9F98E6;
+  -webkit-animation: spin-right 25s linear infinite;
+  animation: spin-right 25s linear infinite;
 }
 
 /* ---------- Middle orbit - This is the circles second closest to the central point ---------- */
@@ -101,22 +100,8 @@ $purple: #4a437f79;
   height: 1000px;
   border: 1px $purple solid;
   border-radius: 100%;
-  overflow: hidden;
-  -webkit-animation: spin-right 15s linear infinite;
-  animation: spin-right 15s linear infinite;
-  @include mixins.mobile {
-    border: 1px red solid;
-  }
-}
-
-/* ---------- Repeating styles for the inner orbiting circles ---------- */
-.middle-orbit-circles {
-  top: 25px;
-  left: 17px;
-  height: 20px;
-  width: 20px;
-  border-radius: 100%;
-  background-color: $purple;
+  -webkit-animation: spin-right 25s linear infinite;
+  animation: spin-right 25s linear infinite;
 }
 
 /* ---------- Outer orbit - This is the circles furthest away from the central point ---------- */
@@ -127,18 +112,8 @@ $purple: #4a437f79;
   height: 1357px;
   border: 1px $purple solid;
   border-radius: 100%;
-
-}
-
-/* ---------- Repeating styles for the outer orbiting circles ---------- */
-.outer-orbit-circles {
-  position: absolute;
-  top: -17px;
-  left: 125px;
-  height: 30px;
-  width: 30px;
-  border-radius: 100%;
-  background-color: #00FFCA;
+  -webkit-animation: spin-right 30s linear infinite;
+  animation: spin-right 30s linear infinite;
 }
 
 /* ---------- Animation ---------- */
