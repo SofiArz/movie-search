@@ -1,0 +1,153 @@
+@use "bulma/sass/utilities/mixins";
+
+$purple: #4a437f79;
+
+.App {
+  margin: 20px;
+}
+
+.SearchForm-wrapper {
+  display: flex;
+  justify-content: right;
+  @include mixins.mobile {
+    form{
+      width: 100%;
+      .field.has-addons .control:first-child { width: 100%;}
+      input{
+        width: 100%;
+      }
+    }
+  }
+}
+
+.Home-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  margin-top: 15rem;
+  @include mixins.mobile {
+    margin-top: 6rem;
+  }
+}
+
+.TitleContainer {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 35rem;
+  perspective: 200px;
+  position: relative;
+  h1{font-size: 4rem;}
+  p{
+    font-size: 1.3rem;
+  }
+}
+
+.MoviesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.MoviesList-item {
+  margin-bottom: 24px;
+}
+
+/* ---------- Container for the orbiting circles animation ---------- */
+#circle-orbit-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  @include mixins.mobile {
+    display: none;
+  }
+}
+
+/* ---------- Inner orbit - This is the circles closest to the central point ---------- */
+#inner-orbit {
+  position: absolute;
+  top: 9px;
+  width: 643px;
+  height: 643px;
+  border: 1px $purple solid;
+  border-radius: 100%;
+  -webkit-animation: spin-right 10s linear infinite;
+  animation: spin-right 10s linear infinite;
+}
+
+/* ---------- Repeating styles for the inner orbiting circles ---------- */
+.inner-orbit-circles {
+  position: absolute;
+  top: 194px;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  background-color: #9F98E6;
+}
+
+/* ---------- Middle orbit - This is the circles second closest to the central point ---------- */
+#middle-orbit {
+  position: absolute;
+  top: -166px;
+  width: 1000px;
+  height: 1000px;
+  border: 1px $purple solid;
+  border-radius: 100%;
+  overflow: hidden;
+  -webkit-animation: spin-right 15s linear infinite;
+  animation: spin-right 15s linear infinite;
+  @include mixins.mobile {
+    border: 1px red solid;
+  }
+}
+
+/* ---------- Repeating styles for the inner orbiting circles ---------- */
+.middle-orbit-circles {
+  top: 25px;
+  left: 17px;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background-color: $purple;
+}
+
+/* ---------- Outer orbit - This is the circles furthest away from the central point ---------- */
+#outer-orbit {
+  position: absolute;
+  top: -323px;
+  width: 1357px;
+  height: 1357px;
+  border: 1px $purple solid;
+  border-radius: 100%;
+
+}
+
+/* ---------- Repeating styles for the outer orbiting circles ---------- */
+.outer-orbit-circles {
+  position: absolute;
+  top: -17px;
+  left: 125px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  background-color: #00FFCA;
+}
+
+/* ---------- Animation ---------- */
+@keyframes spin-right {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
