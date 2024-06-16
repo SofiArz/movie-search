@@ -29,7 +29,7 @@ export function SearchForm({ onResult, onDeleteSearch }) {
     return (
         <form onSubmit={handleSubmit}>
             <div className="field has-addons">
-                <div className="control">
+                <div className="control" style={{minWidth:"380px"}}>
                     <input
                         class="input is-primary"
                         onChange={handleChange}

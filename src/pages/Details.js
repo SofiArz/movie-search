@@ -8,7 +8,7 @@ export async function loader({ params }) {
     return defer({ movie });
 }
 
-const API_KEY = 'to be replaced in a config file ' //TO DO
+const API_KEY = '4d326555' //TO DO
 
 export const Details = () => {
     const { movie } = useLoaderData()
