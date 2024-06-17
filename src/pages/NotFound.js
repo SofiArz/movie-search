@@ -4,10 +4,9 @@ export const NotFound = (props) => {
 
     const {
         title = "Page not found!",
-        description = "Looks like you are lost in space!"
+        description = "Looks like you are lost in space!",
+        goHome = () => (redirect("/"))
     } = props
-
-    const goHome = () => (redirect("/"))
 
     return (
         <div className="Home-wrapper">
@@ -18,7 +17,7 @@ export const NotFound = (props) => {
             <div className="TitleContainer">
                 <h1>{title}</h1>
                 <p>{description}</p>
-                <button className="button is-primary" style={{marginBottom:"30px"}}>Take me home &#128640;</button>
+                <button className="button is-primary" style={{marginBottom:"30px"}} onClick={goHome}>Take me home &#128640;</button>
             </div>
             <a
                 className="attribution"

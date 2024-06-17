@@ -21,7 +21,7 @@ export const Home = () => {
 
     const renderResult = () => (
         result.length === 0
-            ? <NotFound title={"Oops! Movie not found!"} description={"Your search has ventured beyond the known universe!"} />
+            ? <NotFound title={"Oops! Movie not found!"} description={"Your search has ventured beyond the known universe!"} goHome={handleDeleteSearch} />
             : <MoviesList movies={result} />
     )
 
