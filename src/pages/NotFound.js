@@ -1,11 +1,12 @@
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-export const NotFound = (props) => {
+export const NotFound = (props) => { 
+    const navigate = useNavigate();
 
     const {
         title = "Page not found!",
         description = "Looks like you are lost in space!",
-        goHome = () => (redirect("/"))
+        goHome = () => (navigate("/"))
     } = props
 
     return (
