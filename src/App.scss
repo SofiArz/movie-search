@@ -36,10 +36,23 @@ $grey: #4a437f79;
   justify-content: center;
   text-align: center;
   flex-grow: 1;
-  margin-top: 15rem;
 
   @include mixins.mobile {
     margin-top: 6rem;
+  }
+}
+
+.Home-wrapper:has(img){
+  margin-top: 2rem;
+  @include mixins.mobile{
+    flex-direction: column-reverse;
+    margin-top: 6rem;
+  }
+  @include mixins.tablet{
+    flex-direction: column-reverse;
+  }
+  @include mixins.desktop{
+    flex-direction: row;
   }
 }
 
@@ -56,10 +69,25 @@ $grey: #4a437f79;
 
   h1 {
     font-size: 4rem;
+    color: whitesmoke;
   }
 
   p {
     font-size: 1.3rem;
+  }
+
+  @include mixins.mobile{
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+  }
+  @include mixins.tablet{
+    h1 {
+      font-size: 3rem;
+    }
   }
 }
 
@@ -74,6 +102,24 @@ $grey: #4a437f79;
   margin-bottom: 24px;
 }
 
+
+/*---------- Error css ----------*/
+.not-found-container{
+    position: fixed;
+    display: flex;
+    img{
+      align-self: flex-start;
+    }
+}
+
+.attribution{
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+  width: 300px;
+}
+
+/* ---------- Orbit css ---------- */
 .streaming-logo-orbit {
   height: 50px;
   width: 50px;
@@ -84,7 +130,6 @@ $grey: #4a437f79;
   z-index: -5;
 }
 
-/* ---------- Container for the orbiting circles animation ---------- */
 #circle-orbit-container {
   position: fixed;
   display: flex;
@@ -99,7 +144,6 @@ $grey: #4a437f79;
   }
 }
 
-/* ---------- Inner orbit - This is the circles closest to the central point ---------- */
 #inner-orbit {
   position: absolute;
   top: 9px;
@@ -111,7 +155,6 @@ $grey: #4a437f79;
   animation: spin-right 25s linear infinite;
 }
 
-/* ---------- Middle orbit - This is the circles second closest to the central point ---------- */
 #middle-orbit {
   position: absolute;
   top: -166px;
@@ -123,7 +166,6 @@ $grey: #4a437f79;
   animation: spin-right 25s linear infinite;
 }
 
-/* ---------- Outer orbit - This is the circles furthest away from the central point ---------- */
 #outer-orbit {
   position: absolute;
   top: -323px;

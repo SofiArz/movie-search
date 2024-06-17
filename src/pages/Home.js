@@ -3,6 +3,7 @@ import { Title } from '../components/Title'
 import { SearchForm } from '../components/SearchForm'
 import { MoviesList } from '../components/MoviesList'
 import { Orbit } from '../components/Orbit'
+import { NotFound } from './NotFound';
 
 export const Home = () => {
     const [result, setResult] = useState([])
@@ -20,7 +21,7 @@ export const Home = () => {
 
     const renderResult = () => (
         result.length === 0
-            ? <small>Movie not found &#128534; </small>
+            ? <NotFound title={"Oops! Movie not found!"} description={"Your search has ventured beyond the known universe!"} />
             : <MoviesList movies={result} />
     )
 
@@ -35,7 +36,7 @@ export const Home = () => {
             {isSearchUsed ?
                 renderResult() :
                 (
-                    <div className='Home-wrapper'>
+                    <div className='Home-wrapper' style={{ marginTop: "15rem" }}>
                         <div className='TitleContainer'>
                             <Title>Where to Watch ?</Title>
                             <p>
@@ -48,7 +49,7 @@ export const Home = () => {
                     </div>
                 )
             }
-           
+
 
         </div>
     )
