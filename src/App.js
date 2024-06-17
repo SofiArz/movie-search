@@ -1,9 +1,10 @@
 
 import { Home } from './pages/Home'
 import {
+  NotFound,
   Details,
-  loader as detailsLoader,
-} from './pages/Details'
+  detailsLoader
+} from './pages'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -23,6 +24,10 @@ function App() {
       element: <Details />,
       loader: detailsLoader
     },
+    {
+      path: "*",
+      element: <NotFound />
+    }
   ]);
 
   return (
