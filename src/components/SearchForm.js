@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-const API_KEY = 'to be replaced in a config file ' //TO DO
-
 export function SearchForm({ onResult, onDeleteSearch }) {
     const [movie, setMovie] = useState('')
 
@@ -17,7 +15,7 @@ export function SearchForm({ onResult, onDeleteSearch }) {
             return
         }
 
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${movie}`)
+        fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_KEY}&s=${movie}`)
             .then(res => res.json())
             .then(results => {
                 const { Search = [], totalResults = "0" } = results
