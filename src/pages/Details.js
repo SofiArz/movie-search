@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import { defer, useLoaderData } from "react-router-dom";
 
 export async function loader({ params }) {
