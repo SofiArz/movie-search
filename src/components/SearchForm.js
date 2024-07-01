@@ -9,18 +9,19 @@ export function SearchForm({ onResult, onDeleteSearch }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
         if (!movie) {
             onDeleteSearch()
             return
         }
 
-        fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_KEY}&s=${movie}`)
+        fetch(`${process.env.REACT_APP_API_URL}/shows/search/title?country=us&title=${movie}`,{
+            headers:{
+                'x-rapidapi-key':process.env.REACT_APP_STREAMING_API_KEY
+            }}
+        )
             .then(res => res.json())
             .then(results => {
-                const { Search = [], totalResults = "0" } = results
-                onResult(Search)
-                console.log({ Search, totalResults })
+                onResult(results)
             })
     }
 
