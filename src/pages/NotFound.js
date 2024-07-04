@@ -10,9 +10,9 @@ export const NotFound = (props) => {
     } = props
 
     return (
-        <div className="Home-wrapper">
+        <div className="wrapper">
             <img
-                src="/404.gif"
+                src="/img/404.gif"
                 alt="lost-spaceman"
             />
             <div className="TitleContainer">
