@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function SearchForm({ onResult, onDeleteSearch }) {
+export function SearchForm({ onResult, onDeleteSearch, onLoad }) {
     const [movie, setMovie] = useState('')
 
     const handleChange = (e) => {
@@ -9,10 +9,13 @@ export function SearchForm({ onResult, onDeleteSearch }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
         if (!movie) {
             onDeleteSearch()
             return
         }
+
+        onLoad(true)
 
         fetch(`${process.env.REACT_APP_API_URL}/shows/search/title?country=us&title=${movie}`,{
             headers:{

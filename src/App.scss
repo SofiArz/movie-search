@@ -30,7 +30,7 @@ $grey: #4a437f79;
   }
 }
 
-.Home-wrapper {
+.wrapper {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -42,7 +42,7 @@ $grey: #4a437f79;
   }
 }
 
-.Home-wrapper:has(img){
+.wrapper:has(img){
   margin-top: 2rem;
   @include mixins.mobile{
     flex-direction: column-reverse;
@@ -103,6 +103,20 @@ $grey: #4a437f79;
   overflow: hidden;
 }
 
+/*---------- Loading ------------*/
+.loader {
+  padding: 8px;
+  border-radius: 50%;
+  background: #25b09b;
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+}
+@keyframes spin {to{transform: rotate(1turn)}}
 
 /*---------- Error css ----------*/
 .not-found-container{
