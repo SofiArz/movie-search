@@ -103,6 +103,14 @@ $grey: #4a437f79;
   overflow: hidden;
 }
 
+.hide {
+  display: none;
+}
+
+.card:hover > .hide {
+  display: block;
+}
+
 /*---------- Loading ------------*/
 .loader {
   padding: 8px;
