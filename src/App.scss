@@ -98,15 +98,25 @@ $grey: #4a437f79;
 }
 
 .MoviesList-item {
-  margin-bottom: 24px;
-  min-height: 680px;
-  overflow: hidden;
+  margin-bottom: 2.5rem;
+  border-radius: 0.75rem;
+  transition: all .2s ease-in-out;
+}
+
+.MoviesList-item:has(> .card:hover) { 
+  transform: scale(1.1);
 }
 
 .hide {
   display: none;
 }
 
+.card{
+  transition: all .2s ease-in-out;
+}
+.card:hover{
+  transform: scale(1.1);
+}
 .card:hover > .hide {
   display: block;
 }
