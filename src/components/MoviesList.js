@@ -4,11 +4,12 @@ export const MoviesList = ({ movies }) => {
     return (
 
         <div className='MoviesList grid is-col-min-12 is-column-gap-5'>
-            {movies.map(movie => {
+            {movies.map((movie, index) => {
                 return (
                     <div
                         key={movie.imdbID}
-                        className='MoviesList-item cell'>
+                        className='MoviesList-item cell'
+                        style={{ zIndex: movies.length - index }}>
                         <Movie
                             title={movie.title}
                             poster={movie.imageSet.verticalPoster.w360}
