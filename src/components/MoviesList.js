@@ -15,6 +15,7 @@ export const MoviesList = ({ movies }) => {
                             poster={movie.imageSet.verticalPoster.w360}
                             year={movie.releaseYear}
                             id={movie.imdbId}
+                            streamingList={movie.streamingOptions?.us || []}
                         />
                     </div>)
             })
